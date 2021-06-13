@@ -1,0 +1,6 @@
+[submodule "uBlogger"]
+	path = uBlogger
+	url = https://github.com/uPagge/uBlogger.git
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
