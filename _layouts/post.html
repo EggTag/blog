@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+
+    {% include style.html %}
+</head>
+
+<body>
+    {% include navbar.html %}
+
+    <div class="min-vh-100">
+        <div class="container">
+            <div class="row">
+                <div class="col col-12 col-lg-9 col-md-8 col-sm-12 col-xm-12">
+                    <h1>{{ page.title }}</h1>
+                    <p>
+                        {{ page.date | date_to_string }}
+                        {% assign author = site.authors | where: 'short_name', page.author | first %}
+                        {% if author %}
+                        - <a href="{{ author.url }}">{{ author.name }}</a>
+                        {% endif %}
+                    </p>
+                    {{ content }}
+                </div>
+                <div class="col col-12 col-lg-3 col-md-4s col-sm-12 col-xm-12" >
+                    <div class="card" >
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Related Posts
+                            </h5>
+                            <div class="list-group">
+                                {% assign filtered_posts = site.posts | where: 'author', author.short_name %}
+                                {% for post in filtered_posts %}
+                                <a href="{{ post.url }}" class="list-group-item list-group-item-action border-0"
+                                    aria-current="true">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">{{ post.title }}</h5>
+                                        <small>{{ post.date | date_to_string }}</small>
+                                    </div>
+                                    <p class="mb-1">{{ post.excerpt }}</p>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include footer.html %}
+
+    {% include js.html %}
+</body>
+
+</html>

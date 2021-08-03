@@ -1,0 +1,11 @@
+version: "3.4"
+
+services: 
+    app:
+        image: jekyll/jekyll
+        volumes: 
+            - ./:/blog
+        ports: 
+            - "1313:1313"
+        working_dir: /blog
+        command: "jekyll build"

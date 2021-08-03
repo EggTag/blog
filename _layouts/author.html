@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="card mb-2">
+  <div class="card-body">
+    <h5 class="card-title">{{ page.name }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ page.position }}</h6>
+    <p class="card-text">{{ content }}</p>
+  </div>
+</div>
+
+<p><h3>Latest Posts</h3></p>
+
+<div class="list-group">
+  {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
+  {% for post in filtered_posts %}
+    <a href="{{ post.url }}" class="list-group-item list-group-item-action active" aria-current="true">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ post.title }}</h5>
+        <small>{{ post.date | date_to_string }}</small>
+      </div>
+      <p class="mb-1">{{ post.excerpt }}</p>
+    </a>
+    {% endfor %}
+</div>
