@@ -1,0 +1,37 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <!-- Next -->
+        {% if paginator.previous_page %}
+        <li class="page-item">
+            <a class="page-link" href="{{ paginator.previous_page_path }}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="{{ paginator.previous_page_path }}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        {% endif %}
+
+        <li class="page-item">
+            <a class="page-link disabled" href="#" aria-current="page">Page: {{ paginator.page }} of {{ paginator.total_pages }}</a>
+        </li>
+
+        <!-- Next -->
+        {% if paginator.next_page %}
+        <li class="page-item">
+            <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Previous">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Previous">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
