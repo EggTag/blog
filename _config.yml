@@ -21,6 +21,7 @@ defaults:
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate-v2
+  - jekyll-sitemap
 
 pagination:
   enabled: true
@@ -30,3 +31,5 @@ pagination:
   limit: 0
   sort_field: 'date'
   sort_reverse: true
+
+url: "https://eggtag.onrender.com/"

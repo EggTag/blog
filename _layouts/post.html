@@ -35,6 +35,7 @@
                             <div class="list-group">
                                 {% assign filtered_posts = site.posts | where: 'author', author.short_name %}
                                 {% for post in filtered_posts %}
+                                {% if page.title != post.title %}
                                 <a href="{{ post.url }}" class="list-group-item list-group-item-action border-0"
                                     aria-current="true">
                                     <div class="d-flex w-100 justify-content-between">
@@ -43,6 +44,7 @@
                                     </div>
                                     <p class="mb-1">{{ post.excerpt |truncatewords: 5 | strip}}</p>
                                 </a>
+                                {% endif %}
                                 {% endfor %}
                             </div>
                         </div>
