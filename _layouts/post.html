@@ -41,7 +41,7 @@
                                         <h5 class="mb-1">{{ post.title }}</h5>
                                         <small>{{ post.date | date_to_string }}</small>
                                     </div>
-                                    <p class="mb-1">{{ post.excerpt }}</p>
+                                    <p class="mb-1">{{ post.excerpt |truncatewords: 5 | strip}}</p>
                                 </a>
                                 {% endfor %}
                             </div>
