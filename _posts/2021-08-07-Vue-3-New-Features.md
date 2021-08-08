@@ -1,6 +1,7 @@
 ---
 layout: 'post'
 title: 'Vue 3 မှာ အသစ်ပါဝင်လာသည့် Fragment နဲ့ Teleport'
+author: zym
 ---
 
 Vue 3 မှာ အသစ်ပါဝင်လာတဲ့ အသုံးဝင် fragment နဲ့ teleport တွေ အကြောင်းဖြစ်ပါတယ်။

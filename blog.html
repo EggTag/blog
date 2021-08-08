@@ -6,17 +6,19 @@ pagination:
   enabled: true
 ---
 
-<h3>This is blog page</h3>
-
 <h1>Latest Posts</h1>
 
-<ul>
-    {% for post in  paginator.posts %}
-    <li>
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        {{ post.excerpt }}
-    </li>
-    {% endfor %}
-</ul>
+<hr>
 
-{% include paginator.html %}
+{% for post in  paginator.posts %}
+    <div class="card">
+      <div class="card-body">
+          <h3 class="card-title">{{ post.title }}</h3>
+          {{ post.excerpt |truncatewords: 7 | strip}} <a href="{{ post.url }}"> ဆက်ဖတ်ရန် </a>
+      </div>
+    </div>
+{% endfor %}
+
+<div class="pt-3">
+  {% include paginator.html %}
+</div>
